@@ -1,4 +1,4 @@
-# App
+# Weather for Model Aircraft Club
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
 
@@ -6,22 +6,28 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Description
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The members of a Model Aircraft Club require an application that allows them to see specific weather data across three locations in order to visually see if the weather is suitable to fly their model aircrafts at their club locations
 
-## Build
+### Key Requirements checklist; 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [ ] Select the specific club locations; Capel Curig, Rhyl, Aberporth  
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- [ ] Suggestions whether the weather is suitable for most aircrafts, eg; wind speed less than 10mph, precipitation probability less then 20% and visibility is good then the suggestion is represented with “GO” flying is possible  
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- [ ] Weather data visible for customers with more bespoke +/ customized aircrafts can decide for themselves. Weather data; Wind speed, Precipitation probability, Visibility  
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- [ ] Select future times as most club members have to work around job times and might be working on plans hours from their checking time  
+
+
+- [ ] Responsiveness so that it will work on both mobiles and computers for members without smartphones  
+
+
+- [ ] Enter specific model aircraft weather requirements so the suggestions are unique/dynamic to each plane  
+
+
+- [ ] “Save” unique plane requirements for ease of access in the future
