@@ -2,3 +2,7 @@
   <p slot="left-content"></p>
   <p slot="right-content"></p>
 </mo-header>
+
+<app-weather-data *ngIf="weatherData" [data]="weatherData" ></app-weather-data>
+
+<!--*ngFor="let loc of hello; index as i;"-->
