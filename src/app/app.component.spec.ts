@@ -12,7 +12,8 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let service: WeatherServiceService;
   let httpTestingController: HttpTestingController;
-  let mockData = [{"1":"1"}];
+  let mockData = 1;
+  let mockResult:any = [];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -38,10 +39,14 @@ describe('AppComponent', () => {
   })
 
   it('getData', async () => {
-    service.getLocationData = jest.fn().mockImplementation( () => of('any'));
+    service.getLocationData = jest.fn().mockImplementation( () => {
+      component.weatherData.push(mockData);
+      return of(component.weatherData);
+    });
     component.getData();
     await fixture.whenStable().then(() =>{
-      expect(component.i).toBe(2);
+      console.log(mockResult)
+      expect(component.weatherData.length).toBe(3);
     })
   })
 });
