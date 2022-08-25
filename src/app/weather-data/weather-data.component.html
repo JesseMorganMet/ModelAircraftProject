@@ -1,9 +1,4 @@
-
-<div *ngIf="data.length==3">
-  <div *ngFor="let d of data;index as i;" >
-    <h3>{{data[i].location.name}}</h3>
-    <p>Wind speed: {{data[i].timeSeries[0].max10mWindGust}}</p>
-    <p>Chance of rain: {{data[i].timeSeries[0].probOfPrecipitation}}</p>
-    <p>Visibility: {{data[i].timeSeries[0].visibility}}</p>
-  </div>
-</div>
+<h3>{{data.location.name}}</h3>
+<p>Wind speed: {{data.timeSeries[0].max10mWindGust}}</p>
+<p>Chance of rain: {{data.timeSeries[0].probOfPrecipitation}}</p>
+<p>Visibility: {{data.timeSeries[0].visibility}}</p>

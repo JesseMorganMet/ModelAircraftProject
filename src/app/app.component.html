@@ -2,6 +2,6 @@
   <p slot="left-content"></p>
   <p slot="right-content"></p>
 </mo-header>
-
-<app-weather-data *ngIf="weatherData" [data]="weatherData" ></app-weather-data>
-
+<div *ngIf="weatherData.length==3">
+  <app-weather-data  *ngFor="let a of weatherData" [data]="weatherData[i]" ></app-weather-data>
+</div>

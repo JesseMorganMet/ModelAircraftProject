@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherDataComponent Should match snapshot 1`] = `
+<app-weather-data
+  __ngContext__="0"
+  data={[Function Object]}
+>
+  <h3>
+    mike
+  </h3><p>
+    Wind speed: 10
+  </p><p>
+    Chance of rain: 5
+  </p><p>
+    Visibility: 20
+  </p>
+</app-weather-data>
+`;
