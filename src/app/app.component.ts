@@ -16,15 +16,18 @@ export class AppComponent {
   constructor(private service:WeatherServiceService) {  }
 
   ngOnInit(){
+    this.getData();
+  }
 
-    this.service.getLocationData(0).subscribe( (data: any) => {
-       this.weatherData.push(data);
-    })
-    this.service.getLocationData(1).subscribe( (data: any) => {
-       this.weatherData.push(data);
-    })
-    this.service.getLocationData(2).subscribe( (data: any) => {
-       this.weatherData.push(data);
-    })
+  getData(){
+    for(let i = 0; i < this.service.locationLatLon.length; i++ ){
+      this.service.getLocationData(i).subscribe( (data: any) => {
+        console.log(data)
+        data = data.features[0].properties
+        this.weatherData.push(data);
+        console.log(this.weatherData)
+      })
+      console.log(i)
+    }
   }
 }

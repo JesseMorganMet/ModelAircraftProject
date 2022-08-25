@@ -1,20 +1,9 @@
-<p>weather-data works!</p>
-<div *ngIf="data[0]">
-  <p>{{data[0].features[0].properties.timeSeries[0].max10mWindGust}}</p>
-  <p>{{data[0].features[0].properties.timeSeries[0].probOfPrecipitation}}</p>
-  <p>{{data[0].features[0].properties.timeSeries[0].visibility}}</p>
-</div>
 
-<p>weather-data works!</p>
-<div *ngIf="data[1]">
-  <p>{{data[1].features[0].properties.timeSeries[0].max10mWindGust}}</p>
-  <p>{{data[1].features[0].properties.timeSeries[0].probOfPrecipitation}}</p>
-  <p>{{data[1].features[0].properties.timeSeries[0].visibility}}</p>
-</div>
-
-<p>weather-data works!</p>
-<div *ngIf="data[2]">
-  <p>{{data[2].features[0].properties.timeSeries[0].max10mWindGust}}</p>
-  <p>{{data[2].features[0].properties.timeSeries[0].probOfPrecipitation}}</p>
-  <p>{{data[2].features[0].properties.timeSeries[0].visibility}}</p>
+<div *ngIf="data.length==3">
+  <div *ngFor="let d of data;index as i;" >
+    <h3>{{data[i].location.name}}</h3>
+    <p>Wind speed: {{data[i].timeSeries[0].max10mWindGust}}</p>
+    <p>Chance of rain: {{data[i].timeSeries[0].probOfPrecipitation}}</p>
+    <p>Visibility: {{data[i].timeSeries[0].visibility}}</p>
+  </div>
 </div>
