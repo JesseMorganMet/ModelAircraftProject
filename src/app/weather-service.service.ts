@@ -5,7 +5,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class WeatherServiceService {
-  locationLatLon = [`latitude=53.105&longitude=-3.913`,`latitude=53.317&longitude=-3.482`,`latitude=52.132&longitude=-4.547`];
+  locationLatLon = [`latitude=53.103&longitude=-3.897`,`latitude=53.317&longitude=-3.482`,`latitude=52.132&longitude=-4.547`];
   i:any
   private baseUrl = `https://api-metoffice.apiconnect.ibmcloud.com/v0/forecasts/point/hourly?excludeParameterMetadata=true&includeLocationName=true&`;
 

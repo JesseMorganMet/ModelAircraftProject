@@ -39,7 +39,6 @@ describe('AppComponent', () => {
   })
   describe('Methods', () => {
     describe('getData', () => {
-
       it('Should retrieve data and add to array', async () => {
         service.getLocationData = jest.fn().mockImplementation( () => {
           return of(mockData);

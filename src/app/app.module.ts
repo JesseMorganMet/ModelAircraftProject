@@ -7,7 +7,6 @@ import { WeatherDataComponent } from './weather-data/weather-data.component';
 import {WeatherServiceService} from './weather-service.service';
 import {HttpClientModule} from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
