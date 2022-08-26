@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { WeatherDataComponent } from './weather-data/weather-data.component';
 import {WeatherServiceService} from './weather-service.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ButtonComponent } from './button/button.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherDataComponent
+    WeatherDataComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
