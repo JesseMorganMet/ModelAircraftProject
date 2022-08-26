@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'App Name Goes Here';
   weatherData:any = [];
   locLength:number = this.service.locationLatLon.length
-  local:any;
+  locationID:any;
 
   constructor(private service:WeatherServiceService) {  }
 
@@ -27,6 +27,4 @@ export class AppComponent {
       })
     }
   }
-
-  displayData($event: any, i){this.local = i;}
 }
