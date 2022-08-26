@@ -37,16 +37,19 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
   })
+  describe('Methods', () => {
+    describe('getData', () => {
 
-  it('getData', async () => {
-    service.getLocationData = jest.fn().mockImplementation( () => {
-      component.weatherData.push(mockData);
-      return of(component.weatherData);
-    });
-    component.getData();
-    await fixture.whenStable().then(() =>{
-      console.log(mockResult)
-      expect(component.weatherData.length).toBe(3);
+      it('Should retrieve data and add to array', async () => {
+        service.getLocationData = jest.fn().mockImplementation( () => {
+          component.weatherData.push(mockData);
+          return of(component.weatherData);
+        });
+        component.getData();
+        await fixture.whenStable().then(() =>{
+          expect(component.weatherData.length).toBe(3);
+        })
+      })
     })
   })
 });
