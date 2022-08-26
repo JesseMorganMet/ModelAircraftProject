@@ -12,7 +12,7 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let service: WeatherServiceService;
   let httpTestingController: HttpTestingController;
-  let mockData = 1;
+  let mockData = {features:[{properties:"any"}]};
   let mockResult:any = [];
 
   beforeEach(async () => {
@@ -42,8 +42,7 @@ describe('AppComponent', () => {
 
       it('Should retrieve data and add to array', async () => {
         service.getLocationData = jest.fn().mockImplementation( () => {
-          component.weatherData.push(mockData);
-          return of(component.weatherData);
+          return of(mockData);
         });
         component.getData();
         await fixture.whenStable().then(() =>{

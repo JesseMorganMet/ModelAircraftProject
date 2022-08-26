@@ -3,5 +3,5 @@
   <p slot="right-content"></p>
 </mo-header>
 <div *ngIf="weatherData.length==3">
-  <app-weather-data  *ngFor="let a of weatherData" [data]="weatherData[i]" ></app-weather-data>
+  <app-weather-data  *ngFor="let a of weatherData; index as i" [data]="weatherData[i]" ></app-weather-data>
 </div>

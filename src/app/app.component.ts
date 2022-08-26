@@ -10,7 +10,6 @@ import {WeatherServiceService} from './weather-service.service';
 export class AppComponent {
   title = 'app';
   weatherData:any = [];
-  i: any;
 
   constructor(private service:WeatherServiceService) {  }
 
@@ -20,7 +19,6 @@ export class AppComponent {
 
   getData(){
     for(let i = 0; i < this.service.locationLatLon.length; i++ ){
-      this.i=i
       this.service.getLocationData(i).subscribe( (data: any) => {
         data = data.features[0].properties
         this.weatherData.push(data);
