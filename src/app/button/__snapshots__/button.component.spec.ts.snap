@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ButtonComponent Should match snapshot 1`] = `
+<app-button
+  __ngContext__="0"
+  d={[Function String]}
+  example={[Function EventEmitter_]}
+  i={[Function Number]}
+>
+  <button>
+    placeName
+  </button>
+</app-button>
+`;

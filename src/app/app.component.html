@@ -3,8 +3,8 @@
   <p slot="right-content"></p>
 </mo-header>
 <div *ngIf="weatherData.length==locLength">
-    <app-button *ngFor="let a of weatherData; index as i" [i]="i" [d]="weatherData[i].location.name" (example)="example($event, i)" ></app-button>
-    <div *ngIf="local!=null">
+  <app-button *ngFor="let a of weatherData; index as i" [i]="i" [d]="weatherData[i].location.name" (example)="example($event, i)" ></app-button>
+  <div *ngIf="local!=null">
       <app-weather-data   [data]="weatherData[local]" ></app-weather-data>
   </div>
 </div>
