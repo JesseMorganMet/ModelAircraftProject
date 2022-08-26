@@ -18,9 +18,10 @@ export class WeatherServiceService {
     console.log(this.http.get(apiUrl, {headers}))
     // return this.http.get(apiUrl, {headers});
     return this.http.get("./assets/response.json")
+    //Temporary protection against using up my limited requests to this datasource
   }
   setup(){
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.http.get('/assets/config.json')
         .subscribe(config => {
           window['id'] = config['id'];
