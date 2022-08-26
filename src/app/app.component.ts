@@ -1,4 +1,5 @@
-import {Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
+import {WeatherServiceService} from './weather-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,22 @@ import {Component, NgModule} from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'app';
+  title = 'App Name Goes Here';
+  weatherData:any = [];
+  locLength:number = this.service.locationLatLon.length
+
+  constructor(private service:WeatherServiceService) {  }
+
+  ngOnInit(){
+    this.getData();
+  }
+
+  getData(){
+    for(let i = 0; i < this.locLength; i++ ){
+      this.service.getLocationData(i).subscribe( (data: any) => {
+        data = data.features[0].properties
+        this.weatherData.push(data);
+      })
+    }
+  }
 }

@@ -1,4 +1,18 @@
-<mo-header product="App Name">
+<mo-header product="{{title}}">
   <p slot="left-content"></p>
   <p slot="right-content"></p>
 </mo-header>
+<div *ngIf="weatherData.length==locLength">
+  <app-weather-data  *ngFor="let a of weatherData; index as i" [data]="weatherData[i]" ></app-weather-data>
+</div>
+
+<!--
+  button component that will auto gen the buttons based
+  on the location name retrieved by the get requests
+
+  button functionality:
+    display location names,
+    onclick must;
+      return the location array id,
+      this id needs to be referenced for weather-data-component to "use"
+-->
