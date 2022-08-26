@@ -28,5 +28,5 @@ export class AppComponent {
     }
   }
 
-  example($event: any, i){this.local = i;}
+  displayData($event: any, i){this.local = i;}
 }
