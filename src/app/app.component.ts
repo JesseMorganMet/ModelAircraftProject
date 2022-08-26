@@ -8,7 +8,7 @@ import {WeatherServiceService} from './weather-service.service';
 })
 
 export class AppComponent {
-  title = 'app';
+  title = 'App Name Goes Here';
   weatherData:any = [];
   locLength:number = this.service.locationLatLon.length
 
