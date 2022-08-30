@@ -10,10 +10,10 @@
 }
 #buttonDiv button{
   min-height:40px;
-  width:150px;
+  max-width:250px;
   color:#fff;
   background-color:  #3b3b3b ;
-  border: 1px;
+  border: black 1px solid;
   border-top: none;
   border-bottom: none;
 }
@@ -31,3 +31,44 @@
   background-color: white;
 }
 
+#smallSelect {
+  display: none;
+}
+@media (max-width: 800px) {
+  #buttonDiv { display: none; }
+  #smallSelect mat-select { display: inline-block; }
+  #smallSelect{
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+    background-color: #2a2a2a;
+    height: 40px;
+    text-align: center;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+  }
+}
+
+.drop{
+  display: flex;
+  flex-direction: column;
+  background-color: #3b3b3b;
+  color:white;
+  width:200px;
+  min-height: 27px;
+  padding:3%;
+  border: black 1px solid;
+  border-top:none;
+  position: relative;
+  z-index: 1;
+}
+.dropCon{
+  display:none;
+  margin-top:4%;
+}
+.drop:hover .dropCon {
+  display: block;
+}
+.dropCon:hover{
+  background-color: #007aa9;
+}

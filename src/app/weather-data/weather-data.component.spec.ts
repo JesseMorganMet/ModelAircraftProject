@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherDataComponent } from './weather-data.component';
+import {pOPrecipPipe, visiblityPipe, WindSpeedPipe} from '../weather-data.pipe';
 
 describe('WeatherDataComponent', () => {
   let component: WeatherDataComponent;
@@ -19,7 +20,12 @@ describe('WeatherDataComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WeatherDataComponent ]
+      declarations: [
+        WeatherDataComponent,
+        WindSpeedPipe,
+        pOPrecipPipe,
+        visiblityPipe
+      ]
     })
     .compileComponents();
 

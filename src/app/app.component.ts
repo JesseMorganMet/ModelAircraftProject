@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {WeatherServiceService} from './weather-service.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,7 @@ export class AppComponent {
   locLength:number = this.service.locationLatLon.length
   locationID:any;
 
-  constructor(private service:WeatherServiceService) {  }
+  constructor(private service:WeatherServiceService) { }
 
   ngOnInit(){
     this.getData();

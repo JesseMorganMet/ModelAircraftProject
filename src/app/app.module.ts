@@ -6,11 +6,16 @@ import { AppComponent } from './app.component';
 import { WeatherDataComponent } from './weather-data/weather-data.component';
 import {WeatherServiceService} from './weather-service.service';
 import {HttpClientModule} from '@angular/common/http';
+import {pOPrecipPipe, visiblityPipe, WeatherDataPipe, WindSpeedPipe} from './weather-data.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherDataComponent
+    WeatherDataComponent,
+    WeatherDataPipe,
+    WindSpeedPipe,
+    pOPrecipPipe,
+    visiblityPipe
   ],
   imports: [
     BrowserModule,
