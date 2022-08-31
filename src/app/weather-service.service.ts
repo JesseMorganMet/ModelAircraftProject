@@ -5,12 +5,14 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class WeatherServiceService {
-  locationLatLon = [`latitude=53.103&longitude=-3.897`,`latitude=53.317&longitude=-3.482`,`latitude=52.132&longitude=-4.547`];
-  i:any
+  locationLatLon = [`latitude=53.103&longitude=-3.897`, `latitude=53.317&longitude=-3.482`, `latitude=52.132&longitude=-4.547`];
+  i: any
   private baseUrl = `https://api-metoffice.apiconnect.ibmcloud.com/v0/forecasts/point/hourly?excludeParameterMetadata=true&includeLocationName=true&`;
 
-  constructor(private http: HttpClient) { }
-  getLocationData(id:number) {
+  constructor(private http: HttpClient) {
+  }
+
+  getLocationData(id: number) {
     const apiUrl = `${this.baseUrl + this.locationLatLon[id]}`;
     let headers = new HttpHeaders();
     headers = headers.append('X-IBM-Client-Id', window['id']);
@@ -20,7 +22,8 @@ export class WeatherServiceService {
     return this.http.get("./assets/response.json")
     //Temporary protection against using up my limited requests to this datasource
   }
-  setup(){
+
+  setup() {
     return new Promise((resolve) => {
       this.http.get('/assets/config.json')
         .subscribe(config => {

@@ -1,6 +1,6 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppComponent} from './app.component';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import {WeatherServiceService} from './weather-service.service';
 import {of} from 'rxjs';
@@ -12,8 +12,8 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let service: WeatherServiceService;
   let httpTestingController: HttpTestingController;
-  let mockData = {features:[{properties:"any"}]};
-  let mockResult:any = [];
+  let mockData = {features: [{properties: "any"}]};
+  let mockResult: any = [];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
         AppComponent,
         WeatherDataComponent
       ],
-      providers:[
+      providers: [
         WeatherServiceService
       ]
     }).compileComponents();
@@ -40,12 +40,12 @@ describe('AppComponent', () => {
   describe('Methods', () => {
     describe('getData', () => {
       it('Should retrieve data and add to array', async () => {
-        service.getLocationData = jest.fn().mockImplementation( () => {
+        service.getLocationData = jest.fn().mockImplementation(() => {
           return of(mockData);
         });
         component.getData();
-        await fixture.whenStable().then(() =>{
-          expect(component.weatherData.length).toBe(3 );
+        await fixture.whenStable().then(() => {
+          expect(component.weatherData.length).toBe(3);
         })
       })
     })

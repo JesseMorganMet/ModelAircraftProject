@@ -13,9 +13,9 @@
   <div class="miniScreenBtnToggle">
     <mat-form-field>
       <mat-select class="dropdown">
-        <mat-label>Please Select A Location </mat-label>
+        <mat-label>Please Select A Location</mat-label>
         <ng-container *ngFor=" let data of weatherData; index as i ">
-          <mat-option class="dropdownContent" (click)=" locationID = i " >{{data.location.name}}
+          <mat-option class="dropdownContent" (click)=" locationID = i ">{{data.location.name}}
           </mat-option>
         </ng-container>
       </mat-select>

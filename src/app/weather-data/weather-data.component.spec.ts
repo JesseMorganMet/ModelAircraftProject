@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WeatherDataComponent } from './weather-data.component';
+import {WeatherDataComponent} from './weather-data.component';
 import {pOPrecipPipe, visiblityPipe, WindSpeedPipe} from '../weather-data.pipe';
 
 describe('WeatherDataComponent', () => {
@@ -27,7 +27,7 @@ describe('WeatherDataComponent', () => {
         visiblityPipe
       ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(WeatherDataComponent);
     component = fixture.componentInstance;
