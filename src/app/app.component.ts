@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'App Name Goes Here';
   weatherData:any = [];
   locLength:number = this.service.locationLatLon.length
+  locationID:any;
 
   constructor(private service:WeatherServiceService) {  }
 
