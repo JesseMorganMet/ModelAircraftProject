@@ -17,9 +17,9 @@ export class WindSpeedPipe implements PipeTransform {
 @Pipe({name: 'pOPrecip'})
 export class pOPrecipPipe implements PipeTransform {
   transform(data: any):string{
-    let ppRound = Math.round(data/5)*5;
+    let ppRound = Math.round(data / 5 ) * 5;
     if(ppRound >= 10){
-      ppRound = Math.round(ppRound/10)*10;
+      ppRound = Math.round(ppRound / 10 ) * 10;
     }
     return (ppRound + "%");
   }
@@ -28,20 +28,16 @@ export class pOPrecipPipe implements PipeTransform {
 @Pipe({name: 'vis'})
 export class visiblityPipe implements PipeTransform {
   transform(data: any):string{
-    if(data<1000){
-      return ("Very Poor " +`(${data}m)`)
-    } else if(data<4000){
-      return ("Poor " +`(${data}m)`)
-    }else if(data<10000){
-      return ("Medium " +`(${data}m)`)
-    }else if(data<20000){
-      return ("Good " +`(${data}m)`)
-    }else if(data<40000){
-      return ("Very Good " +`(${data}m)`)
-    }else if(data>40000){
-      return ("Excellent " +`(${data}m)`)
+    const limits = [{value: 1000, prefix: 'Very Poor'}, {value: 4000, prefix: 'Poor'}, {value: 10000, prefix: 'Medium'},  {value: 20000, prefix: 'Good'}, {value: 40000, prefix: 'Very Good'}]
+    for (const limit of limits){
+      if(data < limit.value){
+        return `${limit.prefix} (${data}m)`
+      }
+    }
+    if(data>40000){
+      return (`Excellent (${data}m)`)
     }else{
-      return ("Something went wrong data is" + data);
+      return (`Something went wrong, data is ${data}`);
     }
   }
 }

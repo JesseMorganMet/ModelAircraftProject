@@ -4,25 +4,25 @@
 </mo-header>
 
 <ng-container *ngIf="weatherData.length==locLength">
-  <div id="buttonDiv">
-    <ng-container *ngFor="let data of weatherData; index as i">
-      <button (click)="locationID = i"><b>{{data.location.name}}</b></button>
+  <div class="buttonDiv">
+    <ng-container *ngFor=" let data of weatherData; index as i ">
+      <button (click)=" locationID = i ">{{data.location.name}}</button>
     </ng-container>
   </div>
 
-  <div id="smallSelect">
+  <div class="miniScreenBtnToggle">
     <mat-form-field>
-      <mat-select class="drop">
+      <mat-select class="dropdown">
         <mat-label>Please Select A Location </mat-label>
-        <ng-container *ngFor="let data of weatherData; index as i">
-          <mat-option class="dropCon" (click)="locationID = i" >{{data.location.name}}
+        <ng-container *ngFor=" let data of weatherData; index as i ">
+          <mat-option class="dropdownContent" (click)=" locationID = i " >{{data.location.name}}
           </mat-option>
         </ng-container>
       </mat-select>
     </mat-form-field>
   </div>
 
-  <div id="dataDiv">
-    <app-weather-data *ngIf="locationID || locationID==0" [data]="weatherData[locationID]"></app-weather-data>
+  <div class="dataDiv">
+    <app-weather-data *ngIf=" locationID || locationID == 0 " [data]="weatherData[locationID]"></app-weather-data>
   </div>
 </ng-container>

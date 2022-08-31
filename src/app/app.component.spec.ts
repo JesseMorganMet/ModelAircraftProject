@@ -45,7 +45,7 @@ describe('AppComponent', () => {
         });
         component.getData();
         await fixture.whenStable().then(() =>{
-          expect(component.weatherData.length).toBe(3);
+          expect(component.weatherData.length).toBe(3 );
         })
       })
     })
