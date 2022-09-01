@@ -5,14 +5,23 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
   __ngContext__="0"
   data={[Function Object]}
 >
-  <h3>
+  <h1>
     mike
-  </h3><p>
-    Wind speed: 10
+  </h1><p>
+    <b>
+      Wind speed: 
+    </b>
+     undefinedm/s
   </p><p>
-    Chance of rain: 5
+    <b>
+      Chance of rain: 
+    </b>
+     5%
   </p><p>
-    Visibility: 20
+    <b>
+      Visibility: 
+    </b>
+     Very Poor (20m)
   </p>
 </app-weather-data>
 `;
