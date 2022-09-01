@@ -1,4 +1,4 @@
-<h1>{{data.location.name}}</h1>
-<p><b>Wind speed: </b> {{data.timeSeries[0].windSpeed10m | windSpeed}}</p>
-<p><b>Chance of rain: </b> {{data.timeSeries[0].probOfPrecipitation | pOPrecip}}</p>
-<p><b>Visibility: </b> {{data.timeSeries[0].visibility | vis}}</p>
+<h1>{{data.location.name}} ({{data.timeSeries[time].time | date: 'short'}})</h1>
+<p><b>Wind speed: </b> {{data.timeSeries[time].windSpeed10m | windSpeed}}</p>
+<p><b>Chance of rain: </b> {{data.timeSeries[time].probOfPrecipitation | pOPrecip}}</p>
+<p><b>Visibility: </b> {{data.timeSeries[time].visibility | vis}}</p>
