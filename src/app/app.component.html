@@ -22,32 +22,34 @@
     </mat-form-field>
   </div>
 
-<!--
-  Plan for time ticket;
-  ngFor loop through times,
-  limited by 24,
-  via (click) time array index passed to weatherdata
+  <!--
+    Plan for time ticket;
+    ngFor loop through times,
+    limited by 24,
+    via (click) time array index passed to weatherdata
 
-  scss;
-  left of screen,
-  rows,
-  same formats as the location buttons
+    scss;
+    left of screen,
+    rows,
+    same formats as the location buttons
 
-  end styling;
-  pipe to display times as images
-  images are time styles as digital display
-  og digital with detached lines that make up the squarish numbers
--->
-  <div class="timeBtns">
-    <b>Select a Time</b>
-    <ng-container *ngFor=" let time of weatherData[locationID].timeSeries; index as i ">
-      <div *ngIf="i<=24">
-        <button (click)=" timeID = i ">{{weatherData[locationID].timeSeries[i].time | date:'H'}}:00</button>
-      </div>
-    </ng-container>
-  </div>
+    end styling;
+    pipe to display times as images
+    images are time styles as digital display
+    og digital with detached lines that make up the squarish numbers
+  -->
+  <ng-container *ngIf=" locationID || locationID == 0">
+    <div class="timeBtns">
+      <b>Select a Time</b>
+      <ng-container *ngFor=" let time of weatherData[locationID].timeSeries; index as i ">
+        <div *ngIf="i<=24">
+          <button (click)=" timeID = i ">{{weatherData[locationID].timeSeries[i].time | date:'H'}}:00</button>
+        </div>
+      </ng-container>
+    </div>
 
-  <div class="dataDiv">
-    <app-weather-data *ngIf=" locationID || locationID == 0 " [data]="weatherData[locationID]" [time]="timeID"></app-weather-data>
-  </div>
+    <div class="dataDiv">
+      <app-weather-data [data]="weatherData[locationID]" [time]="timeID"></app-weather-data>
+    </div>
+  </ng-container>
 </ng-container>

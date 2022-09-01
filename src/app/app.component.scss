@@ -86,8 +86,9 @@
 }
 
 .timeBtns {
-  position: absolute;
-  padding: 1%;
+  position: relative;
+  float: left;
+  padding: 2px;
   background-color: #2a2a2a;
   height: 100%;
   border-right: black 1px solid;
