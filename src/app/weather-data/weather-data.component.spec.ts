@@ -6,15 +6,14 @@ import {pOPrecipPipe, visiblityPipe, WindSpeedPipe} from '../weather-data.pipe';
 describe('WeatherDataComponent', () => {
   let component: WeatherDataComponent;
   let fixture: ComponentFixture<WeatherDataComponent>;
-  const mockData = {
-    "location": {
-      "name": "mike"
-    },
-    "timeSeries": [{
-      "max10mWindGust": 10,
-      "probOfPrecipitation": 5,
-      "visibility": 20
-    }]
+  const mockDataL = {
+    "name": "mike"
+  };
+  const mockDataT = {
+    "time": "2022-08-26T13:00Z",
+    "max10mWindGust": 10,
+    "probOfPrecipitation": 5,
+    "visibility": 20
   }
 
 
@@ -34,7 +33,8 @@ describe('WeatherDataComponent', () => {
   });
 
   it('Should match snapshot', () => {
-    component.data = mockData;
+    component.dataLocation = mockDataL;
+    component.dataWTime = mockDataT;
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
   });

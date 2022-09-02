@@ -21,13 +21,15 @@
       </mat-select>
     </mat-form-field>
   </div>
+
   <div class="centerPage">
     <ng-container *ngIf=" locationID || locationID == 0">
       <div class="timeBtns">
         <b>Select a Time</b>
-        <ng-container *ngFor=" let time of weatherData[locationID].timeSeries; index as i " >
+        <ng-container *ngFor=" let time of weatherData[locationID].timeSeries; index as i ">
           <div *ngIf="i<=24">
-            <ng-container *ngIf="(weatherData[locationID].timeSeries[0].time | date:'d') == (weatherData[locationID].timeSeries[i].time | date:'d')">
+            <ng-container
+              *ngIf="(weatherData[locationID].timeSeries[0].time | date:'d') == (weatherData[locationID].timeSeries[i].time | date:'d')">
               <button (click)=" timeID = i ">{{weatherData[locationID].timeSeries[i].time | date:'shortTime'}}</button>
             </ng-container>
           </div>
@@ -35,7 +37,7 @@
       </div>
 
       <div class="dataDiv">
-        <app-weather-data [data]="weatherData[locationID]" [time]="timeID"></app-weather-data>
+        <app-weather-data [dataLocation]="weatherData[locationID].location" [dataWTime]="weatherData[locationID].timeSeries[timeID]"></app-weather-data>
       </div>
     </ng-container>
   </div>
