@@ -22,7 +22,19 @@
     </mat-form-field>
   </div>
 
-  <div class="dataDiv">
-    <app-weather-data *ngIf=" locationID || locationID == 0 " [data]="weatherData[locationID]"></app-weather-data>
+  <div class="centerPage">
+    <ng-container *ngIf=" locationID || locationID == 0">
+      <div class="timeBtns">
+        <b>Select a Time</b>
+        <ng-container *ngFor="let timeStep of weatherData[locationID].timeSeries; index as i ">
+          <ng-container *ngIf="(weatherData[locationID].timeSeries[0].time | date:'d') == (timeStep.time | date:'d')">
+            <button *ngIf="i<=24" (click)="timeID=i ">{{timeStep.time | date:'shortTime'}}</button>
+          </ng-container>
+        </ng-container>
+      </div>
+      <div class="dataDiv">
+        <app-weather-data [dataLocation]="weatherData[locationID].location" [dataWithTime]="weatherData[locationID].timeSeries[timeID]"></app-weather-data>
+      </div>
+    </ng-container>
   </div>
 </ng-container>

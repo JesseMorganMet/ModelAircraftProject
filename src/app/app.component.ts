@@ -13,6 +13,7 @@ export class AppComponent {
   weatherData: any = [];
   locLength: number = this.service.locationLatLon.length
   locationID: any;
+  timeID: any = 0;
 
   constructor(private service: WeatherServiceService) {
   }

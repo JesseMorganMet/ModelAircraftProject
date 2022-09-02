@@ -6,7 +6,8 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./weather-data.component.scss']
 })
 export class WeatherDataComponent implements OnInit {
-  @Input() data: any;
+  @Input() dataLocation: any;
+  @Input() dataWithTime: any;
 
   constructor() {
   }

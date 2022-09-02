@@ -1,7 +1,23 @@
 h1 {
   background-color: #3b3b3b;
-  width: 100vw;
+  box-sizing: border-box;
+  width: 100%;
   color: #fff;
-  margin-top: 0;
   padding: 1%;
+  margin: 0;
+}
+
+p {
+  background-color: white;
+  padding: 1%;
+  margin: 0 2% 0 2%;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.8em;
+  }
 }
