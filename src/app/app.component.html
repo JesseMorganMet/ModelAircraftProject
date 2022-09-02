@@ -26,9 +26,9 @@
     <ng-container *ngIf=" locationID || locationID == 0">
       <div class="timeBtns">
         <b>Select a Time</b>
-        <ng-container *ngFor=" let timeStep of weatherData[locationID].timeSeries; index as i ">
+        <ng-container *ngFor="let timeStep of weatherData[locationID].timeSeries; index as i ">
           <ng-container *ngIf="(weatherData[locationID].timeSeries[0].time | date:'d') == (timeStep.time | date:'d')">
-            <button *ngIf="i<=24" (click)=" timeID = i ">{{timeStep.time | date:'shortTime'}}</button>
+            <button *ngIf="i<=24" (click)="timeID=i ">{{timeStep.time | date:'shortTime'}}</button>
           </ng-container>
         </ng-container>
       </div>
