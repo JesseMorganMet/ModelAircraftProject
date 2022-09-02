@@ -1,3 +1,4 @@
+//Location Buttons
 .buttonDiv {
   width: 100%;
   display: flex;
@@ -24,10 +25,13 @@
   }
 }
 
-@media (max-width: 800px) {
-  .dataDiv {
-    font-size: 1em !important;
-  }
+//Location Buttons
+
+//Main Content
+.centerPage {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 
 .dataDiv {
@@ -36,12 +40,42 @@
   margin-top: 5%;
 }
 
-.centerPage {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
+@media (max-width: 800px) {
+  .dataDiv {
+    font-size: 1em !important;
+  }
 }
 
+//Main Content
+
+//Time Select elements
+.timeBtns {
+  padding: 2px;
+  background-color: #2a2a2a;
+  width: 100px;
+  height: 100vh;
+  border-right: black 1px solid;
+  color: white;
+  text-align: center;
+
+  button {
+    margin-top: 10%;
+    width: 100%;
+    height: 25px;
+    background-color: #3b3b3b;
+    color: white;
+    border: black 1px solid;
+    text-align: center;
+
+    &:hover {
+      background-color: #007aa9;
+    }
+  }
+}
+
+//Time Select elements
+
+//If screen size is small
 .miniScreenBtnToggle {
   display: none;
 }
@@ -92,26 +126,4 @@
   }
 }
 
-.timeBtns {
-  padding: 2px;
-  background-color: #2a2a2a;
-  width: 100px;
-  height: 100vh;
-  border-right: black 1px solid;
-  color: white;
-  text-align: center;
-
-  button {
-    margin-top: 10%;
-    width: 100%;
-    height: 25px;
-    background-color: #3b3b3b;
-    color: white;
-    border: black 1px solid;
-    text-align: center;
-
-    &:hover {
-      background-color: #007aa9;
-    }
-  }
-}
+//If screen size is small
