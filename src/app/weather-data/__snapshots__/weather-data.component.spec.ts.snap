@@ -4,7 +4,7 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
 <app-weather-data
   __ngContext__="0"
   dataLocation={[Function Object]}
-  dataWTime={[Function Object]}
+  dataWithTime={[Function Object]}
 >
   <h1>
     mike

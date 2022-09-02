@@ -34,7 +34,7 @@ describe('WeatherDataComponent', () => {
 
   it('Should match snapshot', () => {
     component.dataLocation = mockDataL;
-    component.dataWTime = mockDataT;
+    component.dataWithTime = mockDataT;
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
   });
