@@ -40,12 +40,6 @@
   margin-top: 5%;
 }
 
-@media (max-width: 800px) {
-  .dataDiv {
-    font-size: 1em !important;
-  }
-}
-
 //Main Content
 
 //Time Select elements
@@ -81,6 +75,9 @@
 }
 
 @media (max-width: 800px) {
+  .dataDiv {
+    font-size: 1em !important;
+  }
   .buttonDiv {
     display: none;
   }

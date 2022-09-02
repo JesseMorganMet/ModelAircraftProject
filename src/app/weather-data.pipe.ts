@@ -28,10 +28,13 @@ export class pOPrecipPipe implements PipeTransform {
 @Pipe({name: 'vis'})
 export class visiblityPipe implements PipeTransform {
   transform(data: any): string {
-    const limits = [{value: 1000, prefix: 'Very Poor'}, {value: 4000, prefix: 'Poor'}, {
-      value: 10000,
-      prefix: 'Medium'
-    }, {value: 20000, prefix: 'Good'}, {value: 40000, prefix: 'Very Good'}]
+    const limits = [
+      {value: 1000, prefix: 'Very Poor'},
+      {value: 4000, prefix: 'Poor'},
+      {value: 10000, prefix: 'Medium'},
+      {value: 20000, prefix: 'Good'},
+      {value: 40000, prefix: 'Very Good'}
+    ]
     for (const limit of limits) {
       if (data < limit.value) {
         return `${limit.prefix} (${data}m)`
