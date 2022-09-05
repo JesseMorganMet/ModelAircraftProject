@@ -42,14 +42,14 @@ describe('WeatherDataComponent', () => {
   describe('Should test windChecker function', () => {
     it('Should return True', () => {
       component.checkAttributes = [];
-      let data = 2;
+      const data = 2;
       component.windSpeedSuitability = 5;
       component.windChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(true);
     });
     it('Should Return False', () => {
       component.checkAttributes = [];
-      let data = 10;
+      const data = 10;
       component.windSpeedSuitability = 5;
       component.windChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(false);
@@ -59,14 +59,14 @@ describe('WeatherDataComponent', () => {
   describe('Should test precipitationChecker function', () => {
     it('Should return True', () => {
       component.checkAttributes = [];
-      let data = 2;
+      const data = 2;
       component.precipitationSuitability = 5;
       component.precipitationChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(true);
     });
     it('Should Return False', () => {
       component.checkAttributes = [];
-      let data = 10;
+      const data = 10;
       component.precipitationSuitability = 5;
       component.precipitationChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(false);
@@ -76,14 +76,14 @@ describe('WeatherDataComponent', () => {
   describe('Should test visibilityChecker function', () => {
     it('Should return True', () => {
       component.checkAttributes = [];
-      let data = 10;
+      const data = 10;
       component.visibilitySuitability = 5;
       component.visibilityChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(true);
     });
     it('Should Return False', () => {
       component.checkAttributes = [];
-      let data = 2;
+      const data = 2;
       component.visibilitySuitability = 5;
       component.visibilityChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(false);
