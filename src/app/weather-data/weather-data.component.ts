@@ -71,12 +71,12 @@ export class WeatherDataComponent implements OnInit {
   optimalWeather() {
     for(let bools of this.checkAttributes){
       if(bools.optimal==false){
-        this.checker = `Weather Requirements Are Not Optimal, NO GO`;
+        this.checker = "Weather Requirements Are Not Optimal, NO GO";
         break;
       }else if(bools.optimal==true){
         this.checker = "Weather is Optimal, GO";
       }else{
-        this.checker = "Something went wrong"
+        this.checker = "Something went wrong";
       }
     }
   }
