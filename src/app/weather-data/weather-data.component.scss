@@ -12,7 +12,14 @@ p {
   padding: 1%;
   margin: 0 2% 0 2%;
 }
-
+.optimal{
+  color:green;
+  font-weight: bold;
+}
+.notOptimal{
+  color:red;
+  font-weight: bold;
+}
 @media (max-width: 800px) {
   h1 {
     font-size: 1em;
