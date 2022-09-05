@@ -22,11 +22,11 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
     <b>
       Wind speed: 
     </b>
-     undefinedm/s 
+     10m/s 
     <b
-      class="notOptimal"
+      class="optimal"
     >
-        Not Optimal 
+        Optimal 
     </b>
   </p><p>
     <b>
