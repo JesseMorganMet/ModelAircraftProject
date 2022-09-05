@@ -11,7 +11,7 @@ describe('WeatherDataComponent', () => {
   };
   const mockDataT = {
     "time": "2022-08-26T13:00Z",
-    "max10mWindGust": 10,
+    "windSpeed10m": 10,
     "probOfPrecipitation": 5,
     "visibility": 20
   }
