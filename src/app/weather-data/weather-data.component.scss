@@ -6,7 +6,11 @@ h1 {
   padding: 1%;
   margin: 0;
 }
-
+h2{
+  background-color: white;
+  padding: 1%;
+  margin: 0 2% 0 2%;
+}
 p {
   background-color: white;
   padding: 1%;
@@ -23,6 +27,9 @@ p {
 @media (max-width: 800px) {
   h1 {
     font-size: 1em;
+  }
+  h2{
+    font-size: 0.9em;
   }
   p {
     font-size: 0.8em;
