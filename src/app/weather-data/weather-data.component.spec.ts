@@ -91,17 +91,17 @@ describe('WeatherDataComponent', () => {
   });
   describe('Should test optimalWeather function', () => {
     it('Should return String if anything with key of optimal is false', () => {
-      component.checkAttributes = [{optimal:true},{optimal:true},{optimal:false}]
+      component.checkAttributes = [{optimal: true}, {optimal: true}, {optimal: false}]
       component.optimalWeather();
       expect(component.checker).toBe("Weather Requirements Are Not Optimal, NO GO");
     });
     it('Should Return String if everything with key of optimal is True', () => {
-      component.checkAttributes = [{optimal:true},{optimal:true},{optimal:true}]
+      component.checkAttributes = [{optimal: true}, {optimal: true}, {optimal: true}]
       component.optimalWeather();
       expect(component.checker).toBe("Weather is Optimal, GO");
     });
     it('Should Return String if neither', () => {
-      component.checkAttributes = [{},{},{}]
+      component.checkAttributes = [{}, {}, {}]
       component.optimalWeather();
       expect(component.checker).toBe("Something went wrong");
     });

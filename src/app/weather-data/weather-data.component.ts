@@ -12,10 +12,10 @@ export class WeatherDataComponent implements OnInit {
   windSpeedSuitability: any = 10;
   precipitationSuitability: any = 20;
   visibilitySuitability: any = 10000;
-  i:number=0;
+  i: number = 0;
 
-  checker:any;
-  checkAttributes:any;
+  checker: any;
+  checkAttributes: any;
 
   constructor() {
   }
@@ -23,14 +23,14 @@ export class WeatherDataComponent implements OnInit {
   ngOnInit() {
     this.masterFunction();
   }
-  ngOnChanges(change){
-    console.log(change)
-    if(!change.dataWithTime.firstChange){
+
+  ngOnChanges(change) {
+    if (!change.dataWithTime.firstChange) {
       this.masterFunction();
     }
   }
 
-  masterFunction(){
+  masterFunction() {
     this.checkAttributes = [];
     this.windChecker(this.dataWithTime.windSpeed10m);
     this.precipitationChecker(this.dataWithTime.probOfPrecipitation);
@@ -39,43 +39,43 @@ export class WeatherDataComponent implements OnInit {
   }
 
   windChecker(data) {
-    if(data<=this.windSpeedSuitability){
-      this.checkAttributes.push({optimal:true, class:"optimal", text:" Optimal"})
+    if (data <= this.windSpeedSuitability) {
+      this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
-    }else{
-      this.checkAttributes.push({optimal:false, class:"notOptimal", text:" Not Optimal"})
+    } else {
+      this.checkAttributes.push({optimal: false, class: "notOptimal", text: " Not Optimal"})
       return this.checkAttributes;
     }
   }
 
   precipitationChecker(data) {
-    if(data<=this.precipitationSuitability){
-      this.checkAttributes.push({optimal:true, class:"optimal", text:" Optimal"})
+    if (data <= this.precipitationSuitability) {
+      this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
-    }else{
-      this.checkAttributes.push({optimal:false, class:"notOptimal", text:" Not Optimal"})
+    } else {
+      this.checkAttributes.push({optimal: false, class: "notOptimal", text: " Not Optimal"})
       return this.checkAttributes;
     }
   }
 
   visibilityChecker(data) {
-    if(data>=this.visibilitySuitability){
-      this.checkAttributes.push({optimal:true, class:"optimal", text:" Optimal"})
+    if (data >= this.visibilitySuitability) {
+      this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
-    }else{
-      this.checkAttributes.push({optimal:false, class:"notOptimal", text:" Not Optimal"})
+    } else {
+      this.checkAttributes.push({optimal: false, class: "notOptimal", text: " Not Optimal"})
       return this.checkAttributes;
     }
   }
 
   optimalWeather() {
-    for(let bools of this.checkAttributes){
-      if(bools.optimal==false){
+    for (let bools of this.checkAttributes) {
+      if (bools.optimal == false) {
         this.checker = "Weather Requirements Are Not Optimal, NO GO";
         break;
-      }else if(bools.optimal==true){
+      } else if (bools.optimal == true) {
         this.checker = "Weather is Optimal, GO";
-      }else{
+      } else {
         this.checker = "Something went wrong";
       }
     }
