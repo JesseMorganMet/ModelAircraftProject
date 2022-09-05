@@ -3,28 +3,63 @@
 exports[`WeatherDataComponent Should match snapshot 1`] = `
 <app-weather-data
   __ngContext__="0"
+  checkAttributes={[Function Array]}
+  checker={[Function String]}
   dataLocation={[Function Object]}
   dataWithTime={[Function Object]}
+  i="0"
+  precipitationSuitability={[Function Number]}
+  visibilitySuitability={[Function Number]}
+  windSpeedSuitability={[Function Number]}
 >
   <h1>
     mike
     <br />
     (8/26/22, 2:00 PM)
-  </h1><p>
-    <b>
-      Wind speed: 
-    </b>
-     undefinedm/s
-  </p><p>
-    <b>
-      Chance of rain: 
-    </b>
-     5%
-  </p><p>
-    <b>
-      Visibility: 
-    </b>
-     Very Poor (20m)
-  </p>
+  </h1><h2>
+    Weather Requirements Are Not Optimal, NO GO
+  </h2><div
+    class="weatherInfo"
+  >
+    <p>
+       Wind speed: 
+      <span
+        class="dataValue"
+      >
+        10m/s
+      </span>
+      <span
+        class="optimal"
+      >
+         Optimal
+      </span>
+    </p>
+    <p>
+       Chance of rain: 
+      <span
+        class="dataValue"
+      >
+        5%
+      </span>
+      <span
+        class="optimal"
+      >
+         Optimal
+      </span>
+    </p>
+    <p>
+       Visibility: 
+      <span
+        class="dataValue"
+      >
+        Very Poor (20m)
+      </span>
+      <span
+        class="notOptimal"
+      >
+         Not Optimal
+      </span>
+    </p>
+  </div>
 </app-weather-data>
 `;

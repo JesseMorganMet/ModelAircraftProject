@@ -7,15 +7,42 @@ h1 {
   margin: 0;
 }
 
-p {
+h2 {
   background-color: white;
   padding: 1%;
   margin: 0 2% 0 2%;
 }
 
+.weatherInfo {
+  background-color: white;
+  padding: 1%;
+  margin: 0 2% 0 2%;
+
+  p {
+    font-weight: bold;
+
+    .dataValue {
+      font-weight: normal;
+    }
+  }
+}
+
+.optimal {
+  color: green;
+  font-weight: bold;
+}
+
+.notOptimal {
+  color: red;
+  font-weight: bold;
+}
+
 @media (max-width: 800px) {
   h1 {
     font-size: 1em;
+  }
+  h2 {
+    font-size: 0.9em;
   }
   p {
     font-size: 0.8em;

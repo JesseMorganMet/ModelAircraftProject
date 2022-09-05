@@ -1,4 +1,17 @@
 <h1>{{dataLocation.name}}<br>({{dataWithTime.time | date: 'short'}})</h1>
-<p><b>Wind speed: </b> {{dataWithTime.windSpeed10m | windSpeed}}</p>
-<p><b>Chance of rain: </b> {{dataWithTime.probOfPrecipitation | pOPrecip}}</p>
-<p><b>Visibility: </b> {{dataWithTime.visibility | vis}}</p>
+<h2>{{checker}}</h2>
+
+<div class="weatherInfo">
+  <p>
+    Wind speed: <span class="dataValue">{{dataWithTime.windSpeed10m | windSpeed}}</span>
+    <span class="{{checkAttributes[0].class}}">{{checkAttributes[0].text}}</span>
+  </p>
+  <p>
+    Chance of rain: <span class="dataValue">{{dataWithTime.probOfPrecipitation | pOPrecip}}</span>
+    <span class="{{checkAttributes[1].class}}">{{checkAttributes[1].text}}</span>
+  </p>
+  <p>
+    Visibility: <span class="dataValue">{{dataWithTime.visibility | vis}}</span>
+    <span class="{{checkAttributes[2].class}}">{{checkAttributes[2].text}}</span>
+  </p>
+</div>
