@@ -8,10 +8,16 @@ import {Component, Input, OnInit} from '@angular/core';
 export class WeatherDataComponent implements OnInit {
   @Input() dataLocation: any;
   @Input() dataWithTime: any;
+  @Input() weatherStuff: any = {currentValue: []};
 
-  windSpeedSuitability: any = 10;
-  precipitationSuitability: any = 20;
-  visibilitySuitability: any = 10000;
+  // windSpeedSuitability: any = parseInt(this.weatherStuff[0]);
+  // precipitationSuitability: any = parseInt(this.weatherStuff[1]);
+  // visibilitySuitability: any = parseInt(this.weatherStuff[2]);
+
+  windSpeedSuitability: number = this.weatherStuff.currentValue[0];
+  precipitationSuitability: number = this.weatherStuff.currentValue[1];
+  visibilitySuitability: number = this.weatherStuff.currentValue[2];
+
   i: number = 0;
 
   checker: any;
@@ -25,9 +31,13 @@ export class WeatherDataComponent implements OnInit {
   }
 
   ngOnChanges(change) {
-    if (!change.dataWithTime.firstChange) {
+    console.log(change)
+    if(!change.weatherStuff.firstChange){
       this.masterFunction();
     }
+    // if (!change.dataWithTime.firstChange) {
+    //   this.masterFunction();
+    // }
   }
 
   masterFunction() {
@@ -39,7 +49,8 @@ export class WeatherDataComponent implements OnInit {
   }
 
   windChecker(data) {
-    if (data <= this.windSpeedSuitability) {
+    console.log(parseInt(this.weatherStuff.currentValue[0]))
+    if (data <= parseInt(this.weatherStuff.currentValue[0])) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {
@@ -49,7 +60,8 @@ export class WeatherDataComponent implements OnInit {
   }
 
   precipitationChecker(data) {
-    if (data <= this.precipitationSuitability) {
+    console.log(parseInt(this.weatherStuff.currentValue[1]))
+    if (data <= parseInt(this.weatherStuff.currentValue[1])) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {
@@ -59,7 +71,8 @@ export class WeatherDataComponent implements OnInit {
   }
 
   visibilityChecker(data) {
-    if (data >= this.visibilitySuitability) {
+    console.log(parseInt(this.weatherStuff.currentValue[2]))
+    if (data >= parseInt(this.weatherStuff.currentValue[2])) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {

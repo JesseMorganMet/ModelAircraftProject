@@ -32,48 +32,40 @@
         </ng-container>
       </div>
       <div class="dataDiv">
-        <app-weather-data [dataLocation]="weatherData[locationID].location" [dataWithTime]="weatherData[locationID].timeSeries[timeID]"></app-weather-data>
+        <app-weather-data [dataLocation]="weatherData[locationID].location"
+                          [dataWithTime]="weatherData[locationID].timeSeries[timeID]"
+                          [weatherStuff]="weatherThings"
+        ></app-weather-data>
 
-<!--        NewStuff-->
+        <!--        NewStuff-->
         <div class="forms">
           <!-- wind -->
           <mat-form-field>
-            <input matInput placeholder="Wind Speed" type="number" class="formValues">
-            <span matsuffix> m/s</span>
+            <input type="number" matInput [formControl]="windSpeedInput" placeholder="Wind Speed" class="formValues">
+            <span matSuffix> m/s</span>
           </mat-form-field>
-          <br>
           <!-- rain -->
           <mat-form-field>
             <mat-select placeholder="Precipitation Chance" class="formValues">
-              <mat-option value="option">5%</mat-option>
-              <mat-option value="option">10%</mat-option>
-              <mat-option value="option">20%</mat-option>
-              <mat-option value="option">30%</mat-option>
-              <mat-option value="option">40%</mat-option>
-              <mat-option value="option">50%</mat-option>
-              <mat-option value="option">60%</mat-option>
-              <mat-option value="option">70%</mat-option>
-              <mat-option value="option">80%</mat-option>
-              <mat-option value="option">90%</mat-option>
-              <mat-option value="option">100%</mat-option>
+              <ng-container *ngFor="let precipitationValues of formPrecipitationArr">
+                <mat-option [value]="precipitationValues"
+                            (click)="precipitationInput = precipitationValues">{{precipitationValues}}%</mat-option>
+              </ng-container>
             </mat-select>
           </mat-form-field>
-          <br>
           <!-- vis -->
           <mat-form-field>
             <mat-select placeholder="Visibility" class="formValues">
-              <mat-option value="option">Very Poor (1000)</mat-option>
-              <mat-option value="option">Poor (4000)</mat-option>
-              <mat-option value="option">Medium (10000)</mat-option>
-              <mat-option value="option">Good (20000)</mat-option>
-              <mat-option value="option">Very Good ($0000)</mat-option>
-              <mat-option value="option">Excellent (40000+)</mat-option>
+              <ng-container *ngFor="let visibilityValues of formVisibilityArr">
+                <mat-option [value]="visibilityValues"
+                            (click)="visibilityInput = visibilityValues">{{visibilityValues}}</mat-option>
+              </ng-container>
             </mat-select>
           </mat-form-field>
+          <button (click)="btnClick()" class="btn"></button>
         </div>
       </div>
 
-      <!-- New Feature Goes Here -->
       <!-- Mat-Form-Field -->
       <!-- WindSpeed = User Text Input -->
       <!-- Precipitation = Dropdown -->

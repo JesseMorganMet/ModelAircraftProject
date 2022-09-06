@@ -10,6 +10,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {pOPrecipPipe, visiblityPipe, WeatherDataPipe, WindSpeedPipe} from './weather-data.pipe';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   exports:[
     MatFormFieldModule,
