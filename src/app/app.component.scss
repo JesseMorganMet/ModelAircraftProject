@@ -1,3 +1,4 @@
+
 //Location Buttons
 .buttonDiv {
   width: 100%;
@@ -89,30 +90,24 @@
     border-bottom: black 1px solid;
   }
 }
-
-.dropdown {
-  display: flex;
-  flex-direction: column;
-  background-color: #3b3b3b;
-  color: white;
-  width: 200px;
-  min-height: 27px;
-  padding: 3%;
-  border: black 1px solid;
-  border-top: none;
-  position: relative;
-  z-index: 1;
-
-  &:hover .dropdownContent {
-    display: block;
+.dropdown{
+  color:white !important;
+}
+.dropdownContent {
+  &:hover {
+    background-color: #007aa9;
   }
 }
 
-.dropdownContent {
-  display: none;
-  margin-top: 4%;
 
-  &:hover {
-    background-color: #007aa9;
+.forms {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 1%;
+  margin: 0 2% 0 2%;
+  > * {
+    width: 100%;
+    font-size: 1.1em;
   }
 }
