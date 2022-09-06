@@ -8,15 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class WeatherDataComponent implements OnInit {
   @Input() dataLocation: any;
   @Input() dataWithTime: any;
-  @Input() weatherStuff: any = {currentValue: []};
-
-  // windSpeedSuitability: any = parseInt(this.weatherStuff[0]);
-  // precipitationSuitability: any = parseInt(this.weatherStuff[1]);
-  // visibilitySuitability: any = parseInt(this.weatherStuff[2]);
-
-  windSpeedSuitability: number = this.weatherStuff.currentValue[0];
-  precipitationSuitability: number = this.weatherStuff.currentValue[1];
-  visibilitySuitability: number = this.weatherStuff.currentValue[2];
+  @Input() weatherParameters: any;
 
   i: number = 0;
 
@@ -32,12 +24,7 @@ export class WeatherDataComponent implements OnInit {
 
   ngOnChanges(change) {
     console.log(change)
-    if(!change.weatherStuff.firstChange){
-      this.masterFunction();
-    }
-    // if (!change.dataWithTime.firstChange) {
-    //   this.masterFunction();
-    // }
+    this.masterFunction();
   }
 
   masterFunction() {
@@ -49,8 +36,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   windChecker(data) {
-    console.log(parseInt(this.weatherStuff.currentValue[0]))
-    if (data <= parseInt(this.weatherStuff.currentValue[0])) {
+    if (data <= this.weatherParameters.wind) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {
@@ -60,8 +46,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   precipitationChecker(data) {
-    console.log(parseInt(this.weatherStuff.currentValue[1]))
-    if (data <= parseInt(this.weatherStuff.currentValue[1])) {
+    if (data <= this.weatherParameters.rain) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {
@@ -71,8 +56,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   visibilityChecker(data) {
-    console.log(parseInt(this.weatherStuff.currentValue[2]))
-    if (data >= parseInt(this.weatherStuff.currentValue[2])) {
+    if (data >= this.weatherParameters.vis) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {

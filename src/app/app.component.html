@@ -34,7 +34,7 @@
       <div class="dataDiv">
         <app-weather-data [dataLocation]="weatherData[locationID].location"
                           [dataWithTime]="weatherData[locationID].timeSeries[timeID]"
-                          [weatherStuff]="weatherThings"
+                          [weatherParameters]="weatherInputs"
         ></app-weather-data>
 
         <!--        NewStuff-->
@@ -49,7 +49,8 @@
             <mat-select placeholder="Precipitation Chance" class="formValues">
               <ng-container *ngFor="let precipitationValues of formPrecipitationArr">
                 <mat-option [value]="precipitationValues"
-                            (click)="precipitationInput = precipitationValues">{{precipitationValues}}%</mat-option>
+                            (click)="precipitationInput = precipitationValues">{{precipitationValues}}%
+                </mat-option>
               </ng-container>
             </mat-select>
           </mat-form-field>
@@ -65,18 +66,6 @@
           <button (click)="btnClick()" class="btn"></button>
         </div>
       </div>
-
-      <!-- Mat-Form-Field -->
-      <!-- WindSpeed = User Text Input -->
-      <!-- Precipitation = Dropdown -->
-      <!-- Visibility = Dropdown -->
-      <!-- Need Submit button w/ ts -->
-      <!-- Submit will;
-              on click;
-                  send the chosen options to weather data component,
-                  as type @Input instead of static
-      -->
-
     </ng-container>
   </div>
 </ng-container>
