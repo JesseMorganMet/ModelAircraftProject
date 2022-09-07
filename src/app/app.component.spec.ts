@@ -49,5 +49,15 @@ describe('AppComponent', () => {
         })
       })
     })
+    describe('btnClick', () => {
+      it('Should Add objects to an object', async () => {
+        component.weatherInputs = {wind: 5};
+        component.precipitationInput = 50;
+        component.visibilityInput = 15;
+
+        component.btnClick();
+        expect(component.weatherInputs).toBe({wind: 5, rain: 50, vis: 15});
+      })
+    })
   })
 });

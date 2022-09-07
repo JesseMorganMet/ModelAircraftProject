@@ -8,9 +8,7 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
   dataLocation={[Function Object]}
   dataWithTime={[Function Object]}
   i="0"
-  precipitationSuitability={[Function Number]}
-  visibilitySuitability={[Function Number]}
-  windSpeedSuitability={[Function Number]}
+  weatherParameters={[Function Object]}
 >
   <h1>
     mike
@@ -26,12 +24,12 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
       <span
         class="dataValue"
       >
-        10m/s
+        undefinedm/s
       </span>
       <span
-        class="optimal"
+        class="notOptimal"
       >
-         Optimal
+         Not Optimal
       </span>
     </p>
     <p>
@@ -39,12 +37,12 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
       <span
         class="dataValue"
       >
-        5%
+        NaN%
       </span>
       <span
-        class="optimal"
+        class="notOptimal"
       >
-         Optimal
+         Not Optimal
       </span>
     </p>
     <p>
@@ -52,7 +50,7 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
       <span
         class="dataValue"
       >
-        Very Poor (20m)
+        Something went wrong, data is undefined
       </span>
       <span
         class="notOptimal"
