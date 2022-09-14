@@ -5,6 +5,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {WeatherServiceService} from './weather-service.service';
 import {of} from 'rxjs';
 import {WeatherDataComponent} from './weather-data/weather-data.component';
+import {NgForm} from '@angular/forms';
 
 describe('AppComponent', () => {
 
@@ -14,6 +15,8 @@ describe('AppComponent', () => {
   let httpTestingController: HttpTestingController;
   let mockData = {features: [{properties: "any"}]};
   let mockResult: any = [];
+  let hello = {wind:'',rain:'',vis:''}
+  let data:NgForm;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -49,6 +52,17 @@ describe('AppComponent', () => {
         })
       })
     })
+
+    // describe('setDefaultForm', () => {
+    //     it('Should reset the form if touched property is not true', async () => {
+    //       // data.resetForm(hello)
+    //       console.log(data)
+    //       fixture.detectChanges();
+    //       component.setDefaultForm(data);
+    //       expect(data).toBe({wind: 10, rain: 20, vis: 20000});
+    //     })
+    //   })
+
     //outdated test placeholder til button updated
     // describe('btnClick', () => {
     //   it('Should Add objects to an object', async () => {

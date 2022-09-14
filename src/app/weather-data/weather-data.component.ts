@@ -19,13 +19,10 @@ export class WeatherDataComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.weatherParameters)
     this.masterFunction();
   }
 
   ngOnChanges(change) {
-    console.log(this.weatherParameters)
-    console.log(change)
     this.masterFunction();
   }
 
