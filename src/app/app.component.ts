@@ -30,12 +30,10 @@ export class AppComponent {
   windSpeedInput: any;
 
   f = new FormGroup({
-    wind: new FormControl(),
-    rain: new FormControl(),
-    vis: new FormControl()
+    wind: new FormControl(10),
+    rain: new FormControl(20),
+    vis: new FormControl(20000)
   });
-
-  default: any = {wind: 10, rain: 20, vis: 20000};
 
   constructor(private service: WeatherServiceService) {
   }
@@ -51,17 +49,6 @@ export class AppComponent {
         this.weatherData.push(data);
       })
     }
-  }
-
-  setDefaultForm(f) {
-    if (!f.touched) {
-      this.f.reset({
-        wind: 10,
-        rain: 20,
-        vis: 20000
-      });
-    }
-    return f;
   }
 
   btnClick(f) {
