@@ -42,7 +42,8 @@
 .timeBtns {
   padding: 2px;
   background-color: #2a2a2a;
-  width: 100px;
+  min-width: 76px !important;
+  max-width: 100px !important;
   height: 100vh;
   border-right: black 1px solid;
   color: white;
@@ -69,6 +70,9 @@
 }
 
 @media (max-width: 800px) {
+  h1 {
+    font-size: 1em;
+  }
   .dataDiv {
     font-size: 1em !important;
   }
@@ -88,6 +92,15 @@
     border-top: black 1px solid;
     border-bottom: black 1px solid;
   }
+  form {
+    flex-direction: column;
+
+    > * {
+      + .btn {
+        margin-left: 80%;
+      }
+    }
+  }
 }
 
 .dropdown {
@@ -100,10 +113,8 @@
   }
 }
 
-
 form {
   display: flex;
-  //flex-direction: column;
   background-color: white;
   padding: 1%;
   margin: 0 2% 0 2%;
@@ -113,7 +124,6 @@ form {
   > * {
     width: 100%;
     display: flex;
-    position: center;
     font-size: 1.1em;
     justify-content: space-evenly;
     align-content: center;
@@ -134,3 +144,4 @@ form {
   padding: 1%;
   margin: 0;
 }
+
