@@ -37,7 +37,7 @@
       <div class="dataDiv">
         <h1 class="restrictionsTitle">Current Optimal Restrictions</h1>
 
-        <form [formGroup]="f" (ngSubmit)="btnClick(f)" [action]="setDefaultForm(f)" class="inputForm">
+        <form [formGroup]="f" (ngSubmit)="btnClick(f)" class="inputForm">
           <mat-form-field>
             <input formControlName="wind" type="number" matInput placeholder="Wind Speed" class="formValues">
             <span matSuffix> m/s</span>
