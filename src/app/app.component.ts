@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {WeatherServiceService} from './weather-service.service';
-import {NgForm} from '@angular/forms';
+import {FormControl, FormGroup, NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import {NgForm} from '@angular/forms';
 })
 
 export class AppComponent {
-  title = 'App Name Goes Here';
+  title = 'Model Aircraft Forecast';
   weatherData: any = [];
   locLength: number = this.service.locationLatLon.length
   locationID: any;
@@ -29,6 +29,12 @@ export class AppComponent {
   visibilityInput: any;
   windSpeedInput: any;
 
+  f = new FormGroup({
+    wind: new FormControl(),
+    rain: new FormControl(),
+    vis: new FormControl()
+  });
+
   default: any = {wind: 10, rain: 20, vis: 20000};
 
   constructor(private service: WeatherServiceService) {
@@ -47,9 +53,9 @@ export class AppComponent {
     }
   }
 
-  setDefaultForm(f: NgForm) {
+  setDefaultForm(f) {
     if (!f.touched) {
-      f.resetForm({
+      this.f.reset({
         wind: 10,
         rain: 20,
         vis: 20000
@@ -58,10 +64,10 @@ export class AppComponent {
     return f;
   }
 
-  btnClick(f: NgForm) {
+  btnClick(f) {
     console.log(f)
     //this button can eventually be repurposed as a "save values" button
-    console.log(f.form.value)
-    return f.form.value;
+    console.log(f.value)
+    return f.value;
   }
 }

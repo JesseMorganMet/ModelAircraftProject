@@ -37,14 +37,14 @@
       <div class="dataDiv">
         <h1 class="restrictionsTitle">Current Optimal Restrictions</h1>
 
-        <form #f="ngForm" (ngSubmit)="btnClick(f)" [action]="setDefaultForm(f)" class="inputForm">
+        <form [formGroup]="f" (ngSubmit)="btnClick(f)" [action]="setDefaultForm(f)" class="inputForm">
           <mat-form-field>
-            <input name="wind" ngModel type="number" matInput placeholder="Wind Speed" class="formValues">
+            <input formControlName="wind" type="number" matInput placeholder="Wind Speed" class="formValues">
             <span matSuffix> m/s</span>
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select name="rain" ngModel placeholder="Precipitation Chance" class="formValues">
+            <mat-select formControlName="rain" placeholder="Precipitation Chance" class="formValues">
               <mat-option *ngFor="let precipitationValues of formPrecipitationArr"
                           [value]="precipitationValues"
                           (click)="precipitationInput = precipitationValues">{{precipitationValues}}%
@@ -53,7 +53,7 @@
           </mat-form-field>
 
           <mat-form-field>
-            <mat-select name="vis" ngModel placeholder="Visibility" class="formValues">
+            <mat-select formControlName="vis" placeholder="Visibility" class="formValues">
               <mat-option *ngFor="let visibilityValues of formVisibilityArr"
                           [value]="visibilityValues.value"
                           (click)="visibilityInput = visibilityValues.value">{{visibilityValues.sign + visibilityValues.value}}
@@ -66,7 +66,7 @@
 
         <app-weather-data [dataLocation]="weatherData[locationID].location"
                           [dataWithTime]="weatherData[locationID].timeSeries[timeID]"
-                          [weatherParameters]="f.form.value">
+                          [weatherParameters]="f.value">
         </app-weather-data>
       </div>
     </ng-container>
