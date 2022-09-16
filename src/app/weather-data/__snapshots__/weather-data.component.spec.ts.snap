@@ -15,7 +15,7 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
     <br />
     (8/26/22, 2:00 PM)
   </h1><h2>
-    Weather Requirements Are Not Optimal, NO GO
+    Weather is Optimal, GO
   </h2><div
     class="weatherInfo"
   >
@@ -24,12 +24,12 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
       <span
         class="dataValue"
       >
-        undefinedm/s
+        10m/s
       </span>
       <span
-        class="notOptimal"
+        class="optimal"
       >
-         Not Optimal
+         Optimal
       </span>
     </p>
     <p>
@@ -37,12 +37,12 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
       <span
         class="dataValue"
       >
-        NaN%
+        5%
       </span>
       <span
-        class="notOptimal"
+        class="optimal"
       >
-         Not Optimal
+         Optimal
       </span>
     </p>
     <p>
@@ -50,12 +50,12 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
       <span
         class="dataValue"
       >
-        Something went wrong, data is undefined
+        Very Poor (20m)
       </span>
       <span
-        class="notOptimal"
+        class="optimal"
       >
-         Not Optimal
+         Optimal
       </span>
     </p>
   </div>
