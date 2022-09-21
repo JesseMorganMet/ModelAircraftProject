@@ -5,7 +5,6 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {WeatherServiceService} from './weather-service.service';
 import {of} from 'rxjs';
 import {WeatherDataComponent} from './weather-data/weather-data.component';
-import {FormControl, FormGroup} from '@angular/forms';
 
 describe('AppComponent', () => {
 
@@ -14,13 +13,6 @@ describe('AppComponent', () => {
   let service: WeatherServiceService;
   let httpTestingController: HttpTestingController;
   let mockData = {features: [{properties: "any"}]};
-  let mockResult: any = [];
-  // let hello = {wind:'',rain:'',vis:''}
-  let data = new FormGroup({
-    wind: new FormControl(),
-    rain: new FormControl(),
-    vis: new FormControl()
-  });
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -56,11 +48,5 @@ describe('AppComponent', () => {
         })
       })
     })
-
-    //outdated test placeholder til button updated
-    // describe('btnClick', () => {
-    //   it('Should ', async () => {
-    //   })
-    // })
   })
 });
