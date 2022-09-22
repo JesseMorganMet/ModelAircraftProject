@@ -11,6 +11,7 @@ import {pOPrecipPipe, visiblityPipe, WeatherDataPipe, WindSpeedPipe} from './wea
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LiveStatusComponent } from './live-status/live-status.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     WeatherDataPipe,
     WindSpeedPipe,
     pOPrecipPipe,
-    visiblityPipe
+    visiblityPipe,
+    LiveStatusComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,13 @@
   <p slot="right-content"></p>
 </mo-header>
 
+<div class="connectionStatus">
+  <app-live-status
+    [connectMessage]="liveMessage"
+    [connectStatus]="liveStatus">
+  </app-live-status>
+</div>
+
 <ng-container *ngIf="weatherData.length==locLength">
   <div class="buttonDiv">
     <ng-container *ngFor=" let data of weatherData; index as i ">

@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {WeatherServiceService} from './weather-service.service';
-import {FormControl, FormGroup, NgForm} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
+import {fromEvent, Observable, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import {FormControl, FormGroup, NgForm} from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'Model Aircraft Forecast';
   weatherData: any = [];
   locLength: number = this.service.locationLatLon.length
@@ -35,10 +36,20 @@ export class AppComponent {
     vis: new FormControl(20000)
   });
 
+  onlineEvent: Observable<Event> = new Observable<Event>;
+
+  offlineEvent: Observable<Event> = new Observable<Event>;
+
+  subscriptions: Subscription[] = [];
+
+  liveMessage: string = "";
+  liveStatus: string = "";
+
   constructor(private service: WeatherServiceService) {
   }
 
   ngOnInit() {
+    this.liveCheck();
     this.getData();
   }
 
@@ -56,5 +67,26 @@ export class AppComponent {
     //this button can eventually be repurposed as a "save values" button
     console.log(f.value)
     return f.value;
+  }
+
+  liveCheck() {
+    this.onlineEvent = fromEvent(window, 'online');
+    this.offlineEvent = fromEvent(window, 'offline');
+
+    this.subscriptions.push(this.onlineEvent.subscribe(e => {
+      this.liveMessage = 'Connection back online';
+      this.liveStatus = 'online';
+      console.log('Online');
+    }));
+
+    this.subscriptions.push(this.offlineEvent.subscribe(e => {
+      this.liveMessage = 'Connection lost! You may not see accurate data while Offline';
+      this.liveStatus = 'offline';
+      console.log('Offline');
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 }
