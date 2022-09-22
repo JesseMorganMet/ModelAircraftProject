@@ -8,10 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class WeatherDataComponent implements OnInit {
   @Input() dataLocation: any;
   @Input() dataWithTime: any;
+  @Input() weatherParameters: any;
 
-  windSpeedSuitability: any = 10;
-  precipitationSuitability: any = 20;
-  visibilitySuitability: any = 10000;
   i: number = 0;
 
   checker: any;
@@ -25,9 +23,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   ngOnChanges(change) {
-    if (!change.dataWithTime.firstChange) {
-      this.masterFunction();
-    }
+    this.masterFunction();
   }
 
   masterFunction() {
@@ -39,7 +35,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   windChecker(data) {
-    if (data <= this.windSpeedSuitability) {
+    if (data <= this.weatherParameters.wind) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {
@@ -49,7 +45,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   precipitationChecker(data) {
-    if (data <= this.precipitationSuitability) {
+    if (data <= this.weatherParameters.rain) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {
@@ -59,7 +55,7 @@ export class WeatherDataComponent implements OnInit {
   }
 
   visibilityChecker(data) {
-    if (data >= this.visibilitySuitability) {
+    if (data >= this.weatherParameters.vis) {
       this.checkAttributes.push({optimal: true, class: "optimal", text: " Optimal"})
       return this.checkAttributes;
     } else {

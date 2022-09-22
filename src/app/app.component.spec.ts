@@ -13,7 +13,6 @@ describe('AppComponent', () => {
   let service: WeatherServiceService;
   let httpTestingController: HttpTestingController;
   let mockData = {features: [{properties: "any"}]};
-  let mockResult: any = [];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

@@ -12,8 +12,7 @@
 
   <div class="miniScreenBtnToggle">
     <mat-form-field>
-      <mat-select class="dropdown">
-        <mat-label>Please Select A Location</mat-label>
+      <mat-select placeholder="Please Select A Location" class="dropdown">
         <ng-container *ngFor=" let data of weatherData; index as i ">
           <mat-option class="dropdownContent" (click)=" locationID = i ">{{data.location.name}}
           </mat-option>
@@ -23,7 +22,9 @@
   </div>
 
   <div class="centerPage">
+
     <ng-container *ngIf=" locationID || locationID == 0">
+
       <div class="timeBtns">
         <b>Select a Time</b>
         <ng-container *ngFor="let timeStep of weatherData[locationID].timeSeries; index as i ">
@@ -32,8 +33,41 @@
           </ng-container>
         </ng-container>
       </div>
+
       <div class="dataDiv">
-        <app-weather-data [dataLocation]="weatherData[locationID].location" [dataWithTime]="weatherData[locationID].timeSeries[timeID]"></app-weather-data>
+        <h1 class="restrictionsTitle">Current Optimal Restrictions</h1>
+
+        <form [formGroup]="f" (ngSubmit)="btnClick(f)" class="inputForm">
+          <mat-form-field>
+            <input formControlName="wind" type="number" matInput placeholder="Wind Speed" class="formValues">
+            <span matSuffix> m/s</span>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select formControlName="rain" placeholder="Precipitation Chance" class="formValues">
+              <mat-option *ngFor="let precipitationValues of formPrecipitationArr"
+                          [value]="precipitationValues"
+                          (click)="precipitationInput = precipitationValues">{{precipitationValues}}%
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-select formControlName="vis" placeholder="Visibility" class="formValues">
+              <mat-option *ngFor="let visibilityValues of formVisibilityArr"
+                          [value]="visibilityValues.value"
+                          (click)="visibilityInput = visibilityValues.value">{{visibilityValues.sign + visibilityValues.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button type="submit" class="btn"></button>
+        </form>
+
+        <app-weather-data [dataLocation]="weatherData[locationID].location"
+                          [dataWithTime]="weatherData[locationID].timeSeries[timeID]"
+                          [weatherParameters]="f.value">
+        </app-weather-data>
       </div>
     </ng-container>
   </div>

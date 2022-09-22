@@ -10,10 +10,15 @@ describe('WeatherDataComponent', () => {
     "name": "mike"
   };
   const mockDataT = {
-    "time": "2022-08-26T13:00Z",
-    "windSpeed10m": 10,
-    "probOfPrecipitation": 5,
-    "visibility": 20
+    time: "2022-08-26T13:00Z",
+    windSpeed10m: 10,
+    probOfPrecipitation: 5,
+    visibility: 20
+  }
+  const mockDataWP = {
+    wind: 10,
+    rain: 5,
+    vis: 20
   }
 
 
@@ -35,6 +40,7 @@ describe('WeatherDataComponent', () => {
   it('Should match snapshot', () => {
     component.dataLocation = mockDataL;
     component.dataWithTime = mockDataT;
+    component.weatherParameters = mockDataWP;
     fixture.detectChanges();
     expect(fixture).toMatchSnapshot();
   });
@@ -43,14 +49,14 @@ describe('WeatherDataComponent', () => {
     it('Should return True', () => {
       component.checkAttributes = [];
       const data = 2;
-      component.windSpeedSuitability = 5;
+      component.weatherParameters = {wind: 5};
       component.windChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(true);
     });
     it('Should Return False', () => {
       component.checkAttributes = [];
       const data = 10;
-      component.windSpeedSuitability = 5;
+      component.weatherParameters = {wind: 5};
       component.windChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(false);
     });
@@ -60,14 +66,14 @@ describe('WeatherDataComponent', () => {
     it('Should return True', () => {
       component.checkAttributes = [];
       const data = 2;
-      component.precipitationSuitability = 5;
+      component.weatherParameters = {rain: 5};
       component.precipitationChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(true);
     });
     it('Should Return False', () => {
       component.checkAttributes = [];
       const data = 10;
-      component.precipitationSuitability = 5;
+      component.weatherParameters = {rain: 5};
       component.precipitationChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(false);
     });
@@ -77,14 +83,14 @@ describe('WeatherDataComponent', () => {
     it('Should return True', () => {
       component.checkAttributes = [];
       const data = 10;
-      component.visibilitySuitability = 5;
+      component.weatherParameters = {vis: 5};
       component.visibilityChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(true);
     });
     it('Should Return False', () => {
       component.checkAttributes = [];
       const data = 2;
-      component.visibilitySuitability = 5;
+      component.weatherParameters = {vis: 5};
       component.visibilityChecker(data);
       expect(component.checkAttributes[0].optimal).toBe(false);
     });

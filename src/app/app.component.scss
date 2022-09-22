@@ -42,7 +42,8 @@
 .timeBtns {
   padding: 2px;
   background-color: #2a2a2a;
-  width: 100px;
+  min-width: 76px !important;
+  max-width: 100px !important;
   height: 100vh;
   border-right: black 1px solid;
   color: white;
@@ -69,6 +70,9 @@
 }
 
 @media (max-width: 800px) {
+  h1 {
+    font-size: 1em;
+  }
   .dataDiv {
     font-size: 1em !important;
   }
@@ -88,31 +92,56 @@
     border-top: black 1px solid;
     border-bottom: black 1px solid;
   }
-}
+  form {
+    flex-direction: column;
 
-.dropdown {
-  display: flex;
-  flex-direction: column;
-  background-color: #3b3b3b;
-  color: white;
-  width: 200px;
-  min-height: 27px;
-  padding: 3%;
-  border: black 1px solid;
-  border-top: none;
-  position: relative;
-  z-index: 1;
-
-  &:hover .dropdownContent {
-    display: block;
+    > * {
+      + .btn {
+        margin-left: 80%;
+      }
+    }
   }
 }
 
-.dropdownContent {
-  display: none;
-  margin-top: 4%;
+.dropdown {
+  color: white !important;
+}
 
+.dropdownContent {
   &:hover {
     background-color: #007aa9;
   }
 }
+
+form {
+  display: flex;
+  background-color: white;
+  padding: 1%;
+  margin: 0 2% 0 2%;
+  box-sizing: border-box;
+  align-content: center;
+
+  > * {
+    width: 100%;
+    display: flex;
+    font-size: 1.1em;
+    justify-content: space-evenly;
+    align-content: center;
+    text-align: center;
+
+    + .btn {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.restrictionsTitle {
+  background-color: #3b3b3b;
+  box-sizing: border-box;
+  width: 100%;
+  color: #fff;
+  padding: 1%;
+  margin: 0;
+}
+

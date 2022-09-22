@@ -8,16 +8,14 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
   dataLocation={[Function Object]}
   dataWithTime={[Function Object]}
   i="0"
-  precipitationSuitability={[Function Number]}
-  visibilitySuitability={[Function Number]}
-  windSpeedSuitability={[Function Number]}
+  weatherParameters={[Function Object]}
 >
   <h1>
     mike
     <br />
     (8/26/22, 2:00 PM)
   </h1><h2>
-    Weather Requirements Are Not Optimal, NO GO
+    Weather is Optimal, GO
   </h2><div
     class="weatherInfo"
   >
@@ -55,9 +53,9 @@ exports[`WeatherDataComponent Should match snapshot 1`] = `
         Very Poor (20m)
       </span>
       <span
-        class="notOptimal"
+        class="optimal"
       >
-         Not Optimal
+         Optimal
       </span>
     </p>
   </div>
