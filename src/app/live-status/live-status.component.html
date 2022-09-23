@@ -5,3 +5,12 @@
 <div *ngIf="connectStatus === 'offline'" class="offline">
   <span>{{connectMessage}}</span>
 </div>
+
+<div *ngIf="connectStatus === 'offline'">
+  <div class="{{hidden}}">
+    <p> You appear to have lost connection to the internet,
+        Please note that if you do not reconnect,
+        the data may not be accurate.</p>
+    <button (click)="popupClose()">Dismiss</button>
+  </div>
+</div>

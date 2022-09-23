@@ -9,9 +9,26 @@ export class LiveStatusComponent implements OnInit {
   @Input() connectMessage: string = "";
   @Input() connectStatus: string = "";
 
-  constructor() { }
+  hidden: any;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+    this.popupShow();
+  }
+
+  ngOnChanges(change) {
+    this.popupShow();
+  }
+
+  popupShow() {
+    this.hidden = "show"
+    console.log("peeking")
+  }
+
+  popupClose() {
+    this.hidden = "hide"
+    console.log("hiding")
+  }
 }
