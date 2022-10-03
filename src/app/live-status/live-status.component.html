@@ -1,8 +1,4 @@
-<div *ngIf="connectStatus === 'online'" class="online">
-  <span>{{connectMessage}}</span>
-</div>
-
-<div *ngIf="connectStatus === 'offline'" class="offline">
+<div class="{{connectStatus}}">
   <span>{{connectMessage}}</span>
 </div>
 
