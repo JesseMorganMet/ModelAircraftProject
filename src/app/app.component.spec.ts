@@ -56,7 +56,7 @@ describe('AppComponent', () => {
         })
       })
       describe('ngOnDestroy', () => {
-        it('Should remove two event objects into one array', () => {
+        it('Should unsubscribe the two event objects from the array', () => {
           component.ngOnDestroy();
           expect(component.subscriptions.length).toBe(0);
         })
