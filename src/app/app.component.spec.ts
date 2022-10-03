@@ -48,5 +48,20 @@ describe('AppComponent', () => {
         })
       })
     })
+    describe('Connectivity Methods', () => {
+      describe('liveCheck', () => {
+        it('Should push two event objects into one array', () => {
+          component.liveCheck();
+          expect(component.subscriptions.length).toBe(2);
+        })
+      })
+      describe('ngOnDestroy', () => {
+        it('Should remove two event objects into one array', () => {
+          component.ngOnDestroy();
+          expect(component.subscriptions.length).toBe(0);
+        })
+      })
+    })
   })
+
 });
