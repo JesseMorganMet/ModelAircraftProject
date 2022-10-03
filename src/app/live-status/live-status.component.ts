@@ -24,11 +24,9 @@ export class LiveStatusComponent implements OnInit {
 
   popupShow() {
     this.hidden = "show"
-    console.log("peeking")
   }
 
   popupClose() {
     this.hidden = "hide"
-    console.log("hiding")
   }
 }
