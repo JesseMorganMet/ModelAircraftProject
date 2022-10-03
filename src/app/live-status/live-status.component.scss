@@ -82,3 +82,8 @@ button {
     filter: brightness(0.8);
   }
 }
+@media (max-width: 800px) {
+  p {
+    font-size: 0.7em;
+  }
+}
