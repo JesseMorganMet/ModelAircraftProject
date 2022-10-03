@@ -73,13 +73,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.onlineEvent = fromEvent(window, 'online');
     this.offlineEvent = fromEvent(window, 'offline');
 
-    this.subscriptions.push(this.onlineEvent.subscribe(e => {
+    this.subscriptions.push(this.onlineEvent.subscribe(() => {
       this.liveMessage = 'Connection back online';
       this.liveStatus = 'online';
       console.log('Online');
     }));
 
-    this.subscriptions.push(this.offlineEvent.subscribe(e => {
+    this.subscriptions.push(this.offlineEvent.subscribe(() => {
       this.liveMessage = 'Connection lost! You may not see accurate data while Offline';
       this.liveStatus = 'offline';
       console.log('Offline');
