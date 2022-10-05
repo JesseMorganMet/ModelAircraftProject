@@ -80,7 +80,7 @@ export class AppComponent implements OnInit, OnDestroy {
     }));
 
     this.subscriptions.push(this.offlineEvent.subscribe(() => {
-      this.liveMessage = 'Connection lost! You may not see accurate data while Offline';
+      this.liveMessage = 'Connection lost! You may not have the most recent data while Offline';
       this.liveStatus = 'offline';
       console.log('Offline');
     }));
