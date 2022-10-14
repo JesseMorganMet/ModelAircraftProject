@@ -1,0 +1,13 @@
+<div class="{{connectStatus}}">
+  <span>{{connectMessage}}</span>
+</div>
+
+<div *ngIf="connectStatus === 'offline'">
+  <div class="{{hidden}}">
+    <h1>Warning!</h1>
+    <p> You appear to have lost connection to the internet,
+      Please note that if you do not reconnect,
+      you may not have the most recent data</p>
+    <button (click)="popupClose()">Dismiss</button>
+  </div>
+</div>
